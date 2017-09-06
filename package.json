@@ -1,0 +1,28 @@
+{
+  "name": "j.o.b.-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LohmannTim/J.O.B.-ME.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LohmannTim/J.O.B.-ME/issues"
+  },
+  "homepage": "https://github.com/LohmannTim/J.O.B.-ME#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10",
+    "node": "^8.3.0",
+    "pg": "^7.3.0"
+  }
+}
