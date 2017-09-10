@@ -6,7 +6,8 @@ myApp.config(['$routeProvider', function ($routeProvider) { //angular route- cli
     $routeProvider
         .when('/', //when you hit '/' I want you to...
             {
-                redirectTo: '/home'
+                //redirectTo: '/home',
+                templateUrl: 'views/home.html'
             } //redirect when hit the '/'
         ).when('/prep1', { //this is defining everything we need
             templateUrl: 'views/prep1.html', //provides template- use this part of html
@@ -20,10 +21,10 @@ myApp.config(['$routeProvider', function ($routeProvider) { //angular route- cli
             templateUrl: 'views/exec1.html', //see lines 9-12
             controller: 'execController',
             controllerAs: 'vm'    
-        }).otherwise({
+        })//.otherwise({
             //catch-all
-            redirectTo: 'home'
-        });
+            //redirectTo: 'home'
+        //});
 
 }]);
 
