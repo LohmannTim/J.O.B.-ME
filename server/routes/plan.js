@@ -26,30 +26,29 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res){
-	//var messageId = req.params.id; 
 	console.log('message post was hit!:', req.body);
-	// Add an INSERT query
-	// pool.connect(function(errorConnectingToDatabase, client, done){
-	// 	if(errorConnectingToDatabase) {
-	// 		// when connecting to database failed
-	// 		console.log('Error connecting to database', errorConnectingToDatabase);
-	// 		res.sendStatus(500);
-	// 	} else {
-	// 		// when connecting to database worked!
-	// 		// query like this: UPDATE messages SET message='Have a really terrific day!' WHERE id=1;
-	// 		client.query('', 
-	// 						[req.body.message, messageId], 
-	// 						function(errorMakingQuery, result) {
-	// 			done();
-	// 			if(errorMakingQuery) {
-	// 				console.log('Error making database query', errorMakingQuery);
-	// 				res.sendStatus(500);
-	// 			} else {
-	// 				res.sendStatus(200);
-	// 			}
-	// 		});
-	// 	}
-	// });
+	//Add an INSERT query
+	pool.connect(function(errorConnectingToDatabase, client, done){
+		if(errorConnectingToDatabase) {
+			// when connecting to database failed
+			console.log('Error connecting to database', errorConnectingToDatabase);
+			res.sendStatus(500);
+		} else {
+			// when connecting to database worked!
+			// query like this: UPDATE messages SET message='Have a really terrific day!' WHERE id=1;
+			client.query('INSERT INTO qanda (q1input, q2input, q3input, q4input, q5input) VALUES ($1, $2, $3, $4, $5);',
+							[req.body.why, req.body.what, req.body.where, req.body.factors, req.body.obstacles], 
+							function(errorMakingQuery, result) {
+				done();
+				if(errorMakingQuery) {
+					console.log('Error making database query', errorMakingQuery);
+					res.sendStatus(500);
+				} else {
+					res.sendStatus(200);
+				}
+			});
+		}
+	});
 });
 
 module.exports = router;

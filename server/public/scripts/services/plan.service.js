@@ -16,16 +16,16 @@ myApp.service('PlanService', ['$http', function($http) {
 
     self.getTricks();
 
-    // self.addAnswer = function() {
-    //     console.log('service post hit with: ', self.userAnswer);
-    //     $http({
-    //         method: 'POST',
-    //         url: '/plan', 
-    //         data: self.userAnswer
-    //     }).then(function(response){
-    //         console.log('sent data', response);
-    //     });
-    // };
+    self.addAnswer = function() {
+        console.log('service post hit with: ', self.userAnswer);
+        $http({
+            method: 'POST',
+            url: '/plan', 
+            data: self.userAnswer
+        }).then(function(response){
+            console.log('sent data', response);
+        });
+    };
 
     // self.plan = {
     //     list: []

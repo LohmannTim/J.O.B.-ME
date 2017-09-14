@@ -5,6 +5,6 @@ myApp.controller('HomeController', //give myApp.controller the name of 'ListingC
         var self = this; //building an object to be displayed on the DOM 
         //self.exec = {};
         HomeService.getHome();
-        self.home = HomeService.exec;
+        self.home = HomeService.home;
         }
 ]);
