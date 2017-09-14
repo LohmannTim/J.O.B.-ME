@@ -36,8 +36,8 @@ router.post('/', function(req, res){
 		} else {
 			// when connecting to database worked!
 			// query like this: UPDATE messages SET message='Have a really terrific day!' WHERE id=1;
-			client.query('INSERT INTO qanda (q1input, q2input, q3input, q4input, q5input) VALUES ($1, $2, $3, $4, $5);',
-							[req.body.why, req.body.what, req.body.where, req.body.factors, req.body.obstacles], 
+			client.query('INSERT INTO activitytracker (Company, Job, Date, Date, Contact, Next_steps, Notes) VALUES ($1, $2, $3, $4, $5, $6, $7);',
+							[req.body.company, req.body.job, req.body.date, req.body.contact, req.body.next_steps, req.body.notes], 
 							function(errorMakingQuery, result) {
 				done();
 				if(errorMakingQuery) {

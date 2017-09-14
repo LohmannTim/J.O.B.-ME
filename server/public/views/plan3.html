@@ -1,2 +1,45 @@
 <h1>Plan 3</h1>
 {{vm}}
+
+
+
+<body>
+
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openResume(resume, 'resumeFormat')">Basic Format</button>
+  <button class="tablinks" onclick="openResume(resume, 'sample1')">Sample 1</button>
+  <button class="tablinks" onclick="openResume(resume, 'sample2')">Sample 2</button>
+  <button class="tablinks" onclick="openResume(resume, 'myResume')">My Resume</button>
+</div>
+
+<div id="resumeFormat" class="tabcontent">
+  <h3>Format</h3>
+</div>
+
+<div id="Sample_1" class="tabcontent">
+  <h3>Sample 1</h3>
+</div>
+
+<div id="Sample_2" class="tabcontent">
+  <h3>Sample 2</h3>
+</div>
+
+<div id="myResume" class="tabcontent">
+  <h3>My Resume</h3>
+</div>
+
+<script>
+function openResume(resume) {
+    
+    tabcontent = document.getElementsByClassName("tabcontent");
+    
+    tablinks = document.getElementsByClassName("tablinks");
+    
+    document.getElementById(resume) = "block";
+}
+</script>
+     
+</body>
+</html> 

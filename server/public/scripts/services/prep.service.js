@@ -2,7 +2,7 @@ myApp.service('PrepService', ['$http', function ($http) {
     console.log('Prep Service loaded');
 
     var self = this;
-    self.prep = {
+    self.taskManager = {
         list: []
     };
     self.getPrep =function() {
