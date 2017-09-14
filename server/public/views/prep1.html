@@ -1,0 +1,59 @@
+<h1>Prepare- Stage 1</h1>
+{{vm}}
+
+
+<div class="container">
+        <div class="content">
+          <h2>Plan Page 1</h2>
+          <!-- Why did I do this? -->
+          <!-- {{ lbc.LeaderService }} -->
+        </div>
+      </div>
+      <div>
+          
+          <table>
+              <thead>
+                  <tr>
+                      <th>Username</th>
+                    
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat='leaders in lbc.PrepareService..list'>
+                      <td>{{leaders.username}}</td>
+                      
+                  </tr>
+              </tbody>
+          </table>
+      
+      
+      </div>
+
+      <div class="container">
+            <div class="content">
+              <h2>Leaderboard</h2>
+              <!-- Why did I do this? -->
+              <!-- {{ lbc.LeaderService }} -->
+            </div>
+          </div>
+          <div>
+              
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Username</th>
+                          <th>Balance</th>
+                        
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat='leaders in lbc.LeaderService.leaders.list'>
+                          <td>{{leaders.username}}</td>
+                          <td>${{leaders.money}}</td>
+                          
+                      </tr>
+                  </tbody>
+              </table>
+          
+          
+          </div>

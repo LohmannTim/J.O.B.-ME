@@ -6,9 +6,5 @@ myApp.controller('ExecController', //give myApp.controller the name of 'ListingC
         //self.exec = {};
         ExecService.getExec();
         self.exec = ExecService.exec;
-
-        self.addExec = function () {
-        ExecService.addExec(self.newExec)
         }
-    }
 ]);

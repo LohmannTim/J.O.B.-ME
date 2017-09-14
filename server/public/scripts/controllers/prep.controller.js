@@ -6,8 +6,5 @@ myApp.controller('PrepController', //give myApp.controller the name of 'ListingC
         //self.prep = {};
         PrepService.getPrep();
         self.prep = PrepService.prep;
-        self.addPrep = function () {
-        PrepService.addPrep(self.newPrep)
         }
-    }
 ]);
