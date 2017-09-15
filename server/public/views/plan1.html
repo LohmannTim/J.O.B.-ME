@@ -6,19 +6,19 @@
     <h1>Career search Q and A!!</h1>
     <div id="qAndA">
         <p>Why are you looking for a new job?</p>
-        <input type="text" placeholder="Terrible commute, bad boss, long hours..."ng-model="vm.userAnswer.why">
+        <input ng-style="{'width': '400px'}" type="text" placeholder="Terrible commute, bad boss, long hours..."ng-model="vm.userAnswer.why">
         
         <p>What career titles are most applicable to your search?</p>
-        <input type="text" id="q2Input" placeholder="Farmer, Engineer, Teacher, Engineer, Dog Walker..."ng-model="vm.userAnswer.what">
+        <input ng-style="{'width': '400px'}" type="text" style=""id="q2Input" placeholder="Farmer, Engineer, Teacher, Engineer, Dog Walker..."ng-model="vm.userAnswer.what">
        
         <p>If it were completely up to you, where would you want to work?</p>
-        <input type="text" id="q3Input" placeholder="Minneapolis, My Couch, California, Travelling..."ng-model="vm.userAnswer.where">
+        <input ng-style="{'width': '400px'}" type="text" id="q3Input" placeholder="Minneapolis, My Couch, California, Travelling..."ng-model="vm.userAnswer.where">
         
         <p>What are the 4-5 most important factors in your next job?</p>
-        <input type="text" id="q4Input" placeholder="Compensation, Advancement Opportunities, Location..."ng-model="vm.userAnswer.factors">
+        <input ng-style="{'width': '400px'}" type="text" id="q4Input" placeholder="Compensation, Advancement Opportunities, Location..."ng-model="vm.userAnswer.factors">
       
         <p>What's obstacles are currently in your path?</p>
-        <input type="text" id="q5Input" placeholder="Insecurity, under contract, ..."ng-model="vm.userAnswer.obstacles"></p>
+        <input ng-style="{'width': '400px'}" type="text" id="q5Input" placeholder="Insecurity, under contract, ..."ng-model="vm.userAnswer.obstacles"></p>
         <p><button ng-click= "vm.addAnswer()" id="saveAnswerButton">Save</button>
     </div>
 <div>
