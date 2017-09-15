@@ -1,2 +1,21 @@
 <h1>Prepare- Stage 2</h1>
 {{vm}}
+<div id="myTracker" class="tracker">
+    <h2>My To Do List</h2>
+    <input type="text" id="Company" ng-model="vm.prep2.newCompany.company" placeholder="Company">
+    <input type="text" id="Job" ng-model="vm.prep2.newJob.job"placeholder="Job">
+    <input type="text" id="Date" ng-model="vm.prep2.newDate.date"placeholder="Date">
+    <input type="text" id="Contact" ng-model="vm.prep2.newContact.contact"placeholder="Contact">
+    <input type="text" id="Next Steps" ng-model="vm.prep2.newNextStep.nextstep"placeholder="Next Steps">
+    <input type="text" id="Notes" ng-model="vm.prep2.newNotes.notes"placeholder="Notes">
+    <span onclick="newJobTracker()" class="addJobTracker">Add</span>
+  </div>
+  
+  <ul id="myUL">
+    <li>Company</li>
+    <li>Job</li>
+    <li>Date</li>
+    <li>Contact</li>
+    <li>Next Steps</li>
+    <li>Notes</li>
+  </ul>
