@@ -8,9 +8,6 @@ router.use('/',  function(req, res){
     res.sendFile(path.resolve('./server/public/index.html'))//sending index.html
 });
 
-module.exports = router;
-
-
 
 // Handles login form POST from index.html
 router.post('/',

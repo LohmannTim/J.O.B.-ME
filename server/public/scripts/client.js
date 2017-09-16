@@ -4,10 +4,10 @@ var myApp = angular.module('myApp', ['ngRoute']); //declares the variable.  call
 myApp.config(function($routeProvider) { //angular route- client side routing
     console.log('route config loaded');
     $routeProvider
-        //   .when('/home', {
-        //     templateUrl: '/views/templates/home.html',
-        //     controller: 'LoginController as lc',
-        //   })
+          .when('/home', {
+            templateUrl: '/views/home.html',
+            controller: 'LoginController as lc',
+          })
           .when('/register', {
             templateUrl: '/views/register.html',
             controller: 'LoginController as lc'
@@ -30,10 +30,8 @@ myApp.config(function($routeProvider) { //angular route- client side routing
               }
             }
           })
-          .otherwise({
-            redirectTo: 'home'
-        }).when('/home', {//when you hit '/' I want you to...
-            templateUrl: 'views/home.html',
+          .when('/home2', {//when you hit '/' I want you to...
+            templateUrl: 'views/info.html',
             controller: 'HomeController',
             controllerAs: 'vm'
         }).when('/plan1', {
