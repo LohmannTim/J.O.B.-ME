@@ -1,5 +1,3 @@
-# J.O.B.-ME
-
 J.O.B. ME
 Tim Lohmann
 <8/31/17> | Version 1.0.0.x
@@ -27,22 +25,24 @@ J.O.B. me
 Description of the feature, including wireframes or mock-ups.
 (Could be a drawing, picture or use a tool like Balsamiq to create your wireframes. https://balsamiq.com/)
 
-Start with a login through Passport.  After initial account set-up the data the user enters in to the application will be saved in a database through each step of the process. 
-Top of page will have logo/hyperlink to bring user to homepage and link to next page
+
+Start with a login through Passport.  After initial account set-up(choose username and password) which will be stored in the database using Passport.  The data the user enters in to the application will be saved in a database through each step of the process. 
+Top of page will have logo/hyperlink to bring user to homepage.
 
 Once logged in, the user will be directed to the homepage.  This page will have graphics and (3) buttons the user can choose to select from.  Each button sends the user down a different path- Plan, Prepare, or Execute
 Top of page will have logo/hyperlink to bring user to homepage 
 
 Plan (page 1)
-	Intro- what to think about when you get started.  User will answer a series of questions with a purpose of creating an outline of what they want to achieve by going through this application.
-Top of page will have logo/hyperlink to bring user to homepage and link to next page
+	Intro- what to think about when you get started.  User will input answers to a series of questions about their skills, interests, education, what they are looking for in their next job with a purpose of creating an outline of what they want to achieve by going through this application.  All of this data will be store in the database and will be dynamic so the user can edit/delete.
+Top of page will have logo/hyperlink to bring user to homepage and link to next page on the designated path.
+
 
 Plan (page 2)
-The answers from the previous page will be injected in to a document the user will be able to refer to as a guide through the process so they stay focused on staying the course.  This document will have styling to make it look hand-written and look like it is on a lined sheet of paper as if it were traditional notes.
+The answers from the page 1 will be injected into a document the user will be able to refer to as a guide through the process so they stay focused on staying the course.  This document will have styling to make it look hand-written and look like it is on a lined sheet of paper as if it were traditional notes.
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
 Plan (page 3)
-How to build a resume: resume samples, resume structure, what to include, what not to include, what companies look for and styling tips.  Also some notes about the benefits of tailoring your resume(s) to each position/company.  User can load their resume to the database and save it for later use and access.
+How to build a resume: resume samples, resume structure, what to include, what not to include, what companies look for and styling tips. All of this data will be dynamic coming from the database so I can update/improve the data without hardcoding.  Also some notes about the benefits of tailoring your resume(s) to each position/company.  User can load their resume to the database and save it for later use and access. In PDF or text, the user can make edits, and even fill in their own data to a pre-formatted resume.
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
 
@@ -50,34 +50,43 @@ Plan (page 4)
 Networking- Who is in your network, how can they help, who are your connections connected to.  LinkedIn tips, links to networking tools.  How to find and get a meeting with the right people.
 Top of page will have logo/hyperlink to bring user to homepage and link to Prep section
 
-Prep (page 1)- Now that we know what we want, let’s get prepared so we can seize the opportunity. Why prep is the most important part. Tips, tricks, get your mindset right.
+
+Prep (page 1)- Now that we know what we want, let’s get prepared so we can seize the opportunity. Why prep is the most important part. Tips, tricks, get your mindset right with. This page will probably just be static data as a guide and starter to next steps.
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
+
+
 
 Prep (page 2) Importance of staying organized and a tool(spreadsheet) to assist in this process.  Page will include inputs to create a list and ability to edit the list so user can track their progress and history in the job search(applications, companies of interest, networking opportunities, to-do’s, etc)
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
 Prep (page 3)
-Mapping function- allows users to zoom in or out on the location of their choosing and see a list of the companies in that area.
+Mapping function- allows users to zoom in or out on the location of their choosing and see a list of the companies in that area.  Using Google Places API.
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
+
 Prep (page 4)
-Do your homework-  What to know before you start reaching out.  How to research companies and what info will help you(news, whitepages, job boards, contacts, etc)
+Do your homework-  What to know before you start reaching out.  How to research companies and what info will help you(news, whitepages, job boards, contacts, etc).
+I am considering doing this as an interactive multiple choice quiz, but that may be a stretch goal.
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
+
 
 Execute (page 1)
 Let’s get to to it! This page is an intro about action steps to get you connected to the right people, improving your interview skills, how to approach situations and people(HMs, recruiters, HR etc.) 
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
+
 Execute (page 2)
 Working with recruiters- will have links to the major staffing firms in specific industries.  Also, this page will be a guide of how to work with recruiters.  How recruiters can help and hurt your search.  What motivates recruiters.  What information you NEED to get from and provide to recruiters. 
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
-Execute (page 4)
+
+
+Execute (page 3)
 Go direct- this page is all about getting a leg up on the competition for a job.  How to reach out to someone who could potentially be your first boss and how to WOW them. 
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
 
-Execute(page 5)
+Execute(page 4)
 Interviewing- prep, tips, tricks,questions to ask, and follow-up
 Top of page will have logo/hyperlink to bring user to homepage and link to next page
 
@@ -85,7 +94,7 @@ Execute(page 6){text, img, links}
 Negotiate the offer- 99% of offers are the start of a negotiation.  Many candidates who receive an offer don’t realize this and make the decision to accept or decline.  In fact, the company is expecting and in some cases hoping you will counter their offer.  What to realistically expect and when to walk away.
 Top of page will have logo/hyperlink to bring user to homepage
 
-Abstraction encapsulation inheritance and polymorphism
+
 
 
 
@@ -129,8 +138,7 @@ Application will fully support browsers listed below. All browsers or versions n
 Browser Name
 Version
 Chrome
-
-
+60
 
 
 
@@ -150,7 +158,7 @@ Technologies
 Node
 Express
 Angular
-MongoDB
+MySQL
 Heroku
 Google places API
 	
