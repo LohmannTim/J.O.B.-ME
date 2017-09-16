@@ -5,4 +5,4 @@ myApp.controller('PrepController', function (PrepService) {
         PrepService.getPrep();
         self.prep = PrepService.prep;
         }
-]);
+);

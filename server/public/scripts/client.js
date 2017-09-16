@@ -4,7 +4,35 @@ var myApp = angular.module('myApp', ['ngRoute']); //declares the variable.  call
 myApp.config(function($routeProvider) { //angular route- client side routing
     console.log('route config loaded');
     $routeProvider
-        .when('/home', {//when you hit '/' I want you to...
+        //   .when('/home', {
+        //     templateUrl: '/views/templates/home.html',
+        //     controller: 'LoginController as lc',
+        //   })
+          .when('/register', {
+            templateUrl: '/views/register.html',
+            controller: 'LoginController as lc'
+          })
+          .when('/user', {
+            templateUrl: '/views/user.html',
+            controller: 'UserController as uc',
+            resolve: {
+              getuser : function(UserService){
+                return UserService.getuser();
+              }
+            }
+          })
+          .when('/info', {
+            templateUrl: '/views/info.html',
+            controller: 'InfoController',
+            resolve: {
+              getuser : function(UserService){
+                return UserService.getuser();
+              }
+            }
+          })
+          .otherwise({
+            redirectTo: 'home'
+        }).when('/home', {//when you hit '/' I want you to...
             templateUrl: 'views/home.html',
             controller: 'HomeController',
             controllerAs: 'vm'
@@ -64,6 +92,7 @@ myApp.config(function($routeProvider) { //angular route- client side routing
         .otherwise({
             redirectTo: 'home'
         });
+    });
                     //redirect when hit the '/'
         // ).when('/prep1', { //this is defining everything we need
         //     templateUrl: 'views/prep1.html', //provides template- use this part of html
@@ -79,4 +108,3 @@ myApp.config(function($routeProvider) { //angular route- client side routing
         //     //redirectTo: 'home'
         // //});
 
-        });

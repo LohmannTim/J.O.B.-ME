@@ -7,11 +7,7 @@ myApp.service('HomeService', ['$http', function ($http) {
     };
     self.getHome =function() {
         $http.get('/home').then(function (response){
-            console.log(response.data);
-            self.home.list = response.data;
             console.log('get response', self.home);
-            
-
         })
     }
     }])
