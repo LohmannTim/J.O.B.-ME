@@ -8,3 +8,4 @@ myApp.controller('HomeController', //give myApp.controller the name of 'ListingC
         self.home = HomeService.home;
         }
 ]);
+
