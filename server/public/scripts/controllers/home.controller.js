@@ -4,7 +4,7 @@ myApp.controller('HomeController', //give myApp.controller the name of 'ListingC
         console.log('Home Controller loaded');
         var self = this; //building an object to be displayed on the DOM 
         //self.exec = {};
-        HomeService.getHome();
+        // HomeService.getHome();
         self.home = HomeService.home;
         }
 ]);

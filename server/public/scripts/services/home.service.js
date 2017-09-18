@@ -5,9 +5,9 @@ myApp.service('HomeService', ['$http', function ($http) {
     self.home = {
         list: []
     };
-    self.getHome =function() {
-        $http.get('/home').then(function (response){
-            console.log('get response', self.home);
-        })
-    }
+    // self.getHome =function() {
+    //     $http.get('/home').then(function (response){
+    //         console.log('get response', self.home);
+    //     })
+    // }
     }])

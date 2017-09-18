@@ -4,9 +4,14 @@ var pool = require('../modules/pool.js');
 var path = require('path');
 var passport = require('passport');
 
-router.use('/',  function(req, res){
-    res.sendFile(path.resolve('./server/public/index.html'))//sending index.html
-});
+// router.use('/',  function(req, res){
+//     res.sendFile(path.resolve('./server/public/index.html'))//sending index.html
+// });
+
+// router.post('/', function(req, res) {
+//     console.log('request for index');
+//     // res.sendFile(path.join(__dirname, '../public/views/index.html'));
+//   });
 
 
 // Handles login form POST from index.html
@@ -14,7 +19,9 @@ router.post('/',
     passport.authenticate('local', { // local strategy - userStrategy.js
         // request stays within node/express and is routed as a new request
         successRedirect: '/user'   // goes to routes/user.js
-    })
+    }), function(res, req){
+        console.log('post route hit');
+    }
 );
 
 // Handle index file separately

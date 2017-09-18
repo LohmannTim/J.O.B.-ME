@@ -5,7 +5,8 @@ var pool = require('../modules/pool.js');
 console.log('loading plan.routes');
 
 router.get('/', function(req, res) {
-	console.log('GET route hit');
+    console.log('GET route hit');
+    if(req.isAuthenticated()){
     pool.connect(function (err, db, done) {
         if (err) {
             console.log('Error connecting to database', err);
@@ -22,7 +23,11 @@ router.get('/', function(req, res) {
                     }
                 });
         }
-    })
+    })    
+    } else{
+        console.log('not logged in');
+        res.send(false);
+    }
 });
 
 

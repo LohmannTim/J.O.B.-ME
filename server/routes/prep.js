@@ -24,7 +24,30 @@ router.get('/', function(req, res) {
     })
 });
 
-router.post('/', function(req, res){
+
+router.get('/activitytracker', function(req, res) {
+    console.log('GET route hit');
+    pool.connect(function (err, db, done) {
+        if (err) {
+            console.log('Error connecting to database', err);
+            res.sendStatus(500);
+        } else {
+
+            db.query('SELECT * FROM activitytracker',
+                function (errorMakingQuery, result) {
+                    done();
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);   
+                    } else {
+                        res.send(result.rows);
+                    }
+                });
+        }
+    })
+});
+
+router.post('/activitytracker', function(req, res){
 	console.log('message post was hit!:', req.body);
 	//Add an INSERT query
 	pool.connect(function(errorConnectingToDatabase, client, done){
@@ -35,7 +58,7 @@ router.post('/', function(req, res){
 		} else {
 			// when connecting to database worked!
 			// query like this: UPDATE messages SET message='Have a really terrific day!' WHERE id=1;
-			client.query('INSERT INTO activitytracker (company, job, date, contact, next_steps, notes) VALUES ($1, $2, $3, $4, $5, $6, $7);',
+			client.query('INSERT INTO activitytracker (company, job, date, contact, next_steps, notes) VALUES ($1, $2, $3, $4, $5, $6);',
 							[req.body.company, req.body.job, req.body.date, req.body.contact, req.body.next_steps, req.body.notes], 
 							function(errorMakingQuery, result) {
 				done();
