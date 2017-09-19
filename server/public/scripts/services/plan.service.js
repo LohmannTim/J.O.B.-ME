@@ -3,7 +3,7 @@ myApp.service('PlanService', ['$http', function($http) {
 
      var self = this;
      self.userAnswer = {};
-
+    self.companies = {};
      self.getTricks = function() {
         console.log('getting tricks');
         $http({
@@ -22,6 +22,7 @@ myApp.service('PlanService', ['$http', function($http) {
         list: [],
         item: {}
     };
+
     self.getPlan =function() {
         $http.get('/plan/qanda').then(function (response){//send my request to qanda via plan
             self.plan.list = response.data;
@@ -35,8 +36,6 @@ myApp.service('PlanService', ['$http', function($http) {
                 
         })
     };
-
-
     self.addAnswer = function() {
         console.log('service post hit with: ', self.userAnswer);
         $http({
@@ -48,5 +47,7 @@ myApp.service('PlanService', ['$http', function($http) {
             self.getPlan();
         });
     };
+
+
 
     }]);

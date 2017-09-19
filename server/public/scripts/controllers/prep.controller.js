@@ -4,5 +4,6 @@ myApp.controller('PrepController', function (PrepService) {
         //self.prep = {};
         PrepService.getPrep();
         self.prep = PrepService.prep;
+        self.companies = PrepService.companies;
         }
 );

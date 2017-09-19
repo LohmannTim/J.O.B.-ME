@@ -5,7 +5,9 @@ myApp.service('PrepService', ['$http', function ($http) {
     self.taskManager = {
         list: []
     };
-
+    self.prep = {
+        list: []
+    }
     self.getPrep =function() {
         $http.get('/prep').then(function (response){
             self.prep.list = response.data;
@@ -49,5 +51,22 @@ myApp.service('PrepService', ['$http', function ($http) {
             
         })
     }
+
+    self.companies = {
+        list: []
+    };
+
+    self.getGlassdoor = function() {
+        console.log('getting glassdoor');
+        $http({
+            method: 'GET',
+            url: '/plan/glassdoor'
+        }).then(function(response){
+            console.log('received companies', response.data.response.employers);
+            self.companies.list = response.data.response.employers;
+        });
+    };
+
+    self.getGlassdoor();
 
     }])
