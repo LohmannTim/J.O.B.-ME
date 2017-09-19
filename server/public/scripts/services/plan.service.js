@@ -49,5 +49,4 @@ myApp.service('PlanService', ['$http', function($http) {
         });
     };
 
-    self.
     }]);

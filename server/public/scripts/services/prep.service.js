@@ -35,5 +35,19 @@ myApp.service('PrepService', ['$http', function ($http) {
             
         })
     }
+    self.editActivityTracker = function() {
+        $http.update('/prep/activitytracker').then(function (response){
+            self.prep.list =response.data;
+            console.log('update response', self.prep);
+            
+        })
+    }
+    self.deleteActivityTracker = function() {
+        $http.delete('/prep/activitytracker').then(function (response){
+            self.prep.list =response.data;
+            console.log('destroy response', self.prep);
+            
+        })
+    }
 
     }])
