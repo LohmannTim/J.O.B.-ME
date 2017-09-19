@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
 });
 
 
-
+//retrieving user answers
 router.get('/qanda', function(req, res) {
 	console.log('GET route hit');
     pool.connect(function (err, db, done) {
@@ -52,7 +52,7 @@ router.get('/qanda', function(req, res) {
         }
     })
 });
-
+//post answers from prep1 to db
 router.post('/qanda', function(req, res){
 	console.log('message post was hit!:', req.body);
 	//Add an INSERT query
@@ -78,6 +78,8 @@ router.post('/qanda', function(req, res){
 		}
 	});
 });
+
+//bring on the glassdoor API
 var userKEY = 'eNLRYYKjp4C';
 var userID = '196332';
 var request = require('request');

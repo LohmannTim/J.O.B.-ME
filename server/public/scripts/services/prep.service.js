@@ -37,7 +37,7 @@ myApp.service('PrepService', ['$http', function ($http) {
             
         })
     }
-    self.editActivityTracker = function() {
+    self.updateActivityTracker = function() {
         $http.update('/prep/activitytracker').then(function (response){
             self.prep.list =response.data;
             console.log('update response', self.prep);

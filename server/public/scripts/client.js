@@ -31,7 +31,7 @@ myApp.config(function($routeProvider) { //angular route- client side routing
             }
           })
           .when('/home2', {//when you hit '/' I want you to...
-            templateUrl: 'views/info.html',
+            templateUrl: 'views/home2.html',
             controller: 'HomeController',
             controllerAs: 'vm'
         }).when('/plan1', {

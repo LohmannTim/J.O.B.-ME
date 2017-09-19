@@ -1,24 +1,39 @@
 <h1>Prepare- Stage 2</h1>
-{{vm}}
-<div id="myTracker" class="tracker">
+{{vm.activity}}
+<div id="myTracker" class="container">
     <h2>My job search activity tracker</h2>
-    <input type="text" id="companyInput" ng-model="vm.prep2.newCompany.company" placeholder="Company">
-    <input type="text" id="jobInput" ng-model="vm.prep2.newJob.job"placeholder="Job">
-    <input type="text" id="dateinput" ng-model="vm.prep2.newDate.date"placeholder="Date">
-    <input type="text" id="contactInput" ng-model="vm.prep2.newContact.contact"placeholder="Contact">
-    <input type="text" id="next_stepsInput" ng-model="vm.prep2.newNextStep.nextsteps"placeholder="Next Steps">
-    <input type="text" id="notesInput" ng-model="vm.prep2.newNotes.notes"placeholder="Notes">
-    <span ng-click= "vm.JobTracker()" class="addJobTracker">Add</span>
+    <input type="text" id="companyInput" ng-model="vm.activity.company" placeholder="Company">
+    <input type="text" id="jobInput" ng-model="vm.activity.job"placeholder="Job">
+    <input type="text" id="dateinput" ng-model="vm.activity.date"placeholder="Date">
+    <input type="text" id="contactInput" ng-model="vm.activity.contact"placeholder="Contact">
+    <input type="text" id="next_stepsInput" ng-model="vm.activity.nextsteps"placeholder="Next Steps">
+    <input type="text" id="notesInput" ng-model="vm.activity.notes"placeholder="Notes">
+    <button ng-click= "vm.addActivity()" class="addJobTracker">Add</button>
   </div>
+<div id= "jobtracker">
   
-  <ul id="myUL">
-    <li>Company</li>
-    <li>Job</li>
-    <li>Date</li>
-    <li>Contact</li>
-    <li>Next Steps</li>
-    <li>Notes</li>
-  </ul>
-  <div>
+</div>
+<div class= 'container'>
+  <body ng-controller="prep.controller">
+    <tr ng-repeat="job in vm.jobTracker" class="trackerRow">
+      <td class="compRow">{{activity.company}}</td>
+      <td class="jobRow">{{activity.job}}</td>
+      <td class="dateRow">{{activity.date}}</td>
+      <td class="contactRow">{{activity.contact}}</td>
+      <td class="nextStepsRow">{{activity.nextsteps}}</td>
+      <td class="notesRow">{{activity.notes}}</td>
+     
+     
+     
+     
+      <!-- <td class="petRowUpdate"><button class="petRowUpdateButton tableButton">Go</button></td>
+      <td class="petRowDelete "><button class="petRowDeleteButton tableButton">Go</button></td>
+      <td class="petRowCheckInOut"><button class="petRowCheckInOutButton tableButton">In</button></td> -->
+  </tr>
+  </body>
+</div>
+
+
+  
     <a href="#!/prep3">prep 3</a>
 </div>

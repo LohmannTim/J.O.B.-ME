@@ -5,5 +5,9 @@ myApp.controller('PrepController', function (PrepService) {
         PrepService.getPrep();
         self.prep = PrepService.prep;
         self.companies = PrepService.companies;
+        // self.PrepService.addActivity();
+        // PlanService.addActivity();
+        // self.PlanService.glassdoor();
         }
+        
 );
