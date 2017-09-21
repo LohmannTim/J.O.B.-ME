@@ -1,10 +1,13 @@
 myApp.service('PrepService', ['$http', function ($http) {
     console.log('Prep Service loaded');
 
+  
     var self = this;
     self.taskManager = {
         list: []
     };
+    self.activity = {
+    }
     self.prep = {
         list: []
     }
@@ -23,7 +26,7 @@ myApp.service('PrepService', ['$http', function ($http) {
 
     self.getActivityTracker =function() {
         $http.get('/prep/activitytracker').then(function (response){
-            self.prep.list = response.data;
+            self.activityTracker.list = response.data;
             console.log('get response', self.prep);
             
 
@@ -31,14 +34,18 @@ myApp.service('PrepService', ['$http', function ($http) {
     };
 
     self.addToActivityTracker = function() {
-        $http.put('/prep/activitytracker').then(function (response){
-            self.prep.list =response.data;
-            console.log('put response', self.prep);
-            
+        console.log('service post hit with: ', self.addToActivityTracker);
+        $http({
+            method: 'POST',
+            url: 'prep/activitytracker',
+            data: self.activity
+        }).then(function (response){
+            console.log('sent data', response);
+            self.getActivityTracker();
         })
     }
     self.updateActivityTracker = function() {
-        $http.update('/prep/activitytracker').then(function (response){
+        $http.put('/prep/activitytracker').then(function (response){
             self.prep.list =response.data;
             console.log('update response', self.prep);
             
