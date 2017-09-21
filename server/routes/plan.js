@@ -83,10 +83,10 @@ router.post('/qanda', function(req, res){
 var userKEY = 'eNLRYYKjp4C';
 var userID = '196332';
 var request = require('request');
-var searchTerm = 'minneapolis'
+var searchTerm = 'london'
 
 var repo_options = {
-    url: 'http://api.glassdoor.com/api/api.htm?t.p=' + userID + '&t.k=' + userKEY + '&userip=0.0.0.0&useragent=&format=json&v=1&action=employers&q=city&l=' + searchTerm,
+    url: 'http://api.glassdoor.com/api/api.htm?t.p=' + userID + '&t.k=' + userKEY + '&userip=0.0.0.0&useragent=&format=json&v=1&action=employers&city=' + searchTerm,
     headers: {
       'User-Agent': 'request',
     }
