@@ -26,19 +26,21 @@ myApp.service('PrepService', ['$http', function ($http) {
 
     self.getActivityTracker =function() {
         $http.get('/prep/activitytracker').then(function (response){
+            console.log(response.data);
+            
             self.activityTracker.list = response.data;
-            console.log('get response', self.prep);
+            console.log('get response', self.activityTracker.list);
             
 
         })
     };
 
-    self.addToActivityTracker = function() {
+    self.addToActivityTracker = function(activity) {
         console.log('service post hit with: ', self.addToActivityTracker);
         $http({
             method: 'POST',
             url: 'prep/activitytracker',
-            data: self.activity
+            data: activity
         }).then(function (response){
             console.log('sent data', response);
             self.getActivityTracker();

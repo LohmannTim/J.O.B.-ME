@@ -1,26 +1,26 @@
 <h1>Prepare- Stage 2</h1>
-{{vm.activity}}
+{{vm.activities}}
 <div id="myTracker" class="container">
     <h2>My job search activity tracker</h2>
     <input type="text" id="companyInput" ng-model="vm.activity.company" placeholder="Company">
     <input type="text" id="jobInput" ng-model="vm.activity.job"placeholder="Job">
     <input type="text" id="dateinput" ng-model="vm.activity.date"placeholder="Date">
     <input type="text" id="contactInput" ng-model="vm.activity.contact"placeholder="Contact">
-    <input type="text" id="next_stepsInput" ng-model="vm.activity.nextsteps"placeholder="Next Steps">
+    <input type="text" id="next_stepsInput" ng-model="vm.activity.next_steps"placeholder="Next Steps">
     <input type="text" id="notesInput" ng-model="vm.activity.notes"placeholder="Notes">
-    <button ng-click= "vm.addActivity()" class="addJobTracker">Add</button>
+    <button ng-click= "vm.addActivity(vm.activity)" class="addJobTracker">Add</button>
   </div>
 <div id= "jobtracker">
   
 </div>
 <div class= 'container'>
   <body ng-controller="prep.controller">
-    <tr ng-repeat="job in vm.jobTracker" class="trackerRow">
-      <td class="compRow">{{job.company}}</td>
+    <div ng-repeat="job in vm.activities" class="trackerRow">
+      <p class="compRow">{{job.company}}</p>
       <td class="jobRow">{{job.job}}</td>
       <td class="dateRow">{{job.date}}</td>
       <td class="contactRow">{{job.contact}}</td>
-      <td class="nextStepsRow">{{job.nextsteps}}</td>
+      <td class="nextStepsRow">{{job.next_steps}}</td>
       <td class="notesRow">{{job.notes}}</td>
      
      
@@ -29,7 +29,7 @@
       <!-- <td class="petRowUpdate"><button class="petRowUpdateButton tableButton">Go</button></td>
       <td class="petRowDelete "><button class="petRowDeleteButton tableButton">Go</button></td>
       <td class="petRowCheckInOut"><button class="petRowCheckInOutButton tableButton">In</button></td> -->
-  </tr>
+      </div>
   </body>
 </div>
 
