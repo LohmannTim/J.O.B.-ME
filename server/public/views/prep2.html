@@ -1,5 +1,5 @@
 <h1>Prepare- Stage 2</h1>
-{{vm.activities}}
+
 <div id="myTracker" class="container">
     <h2>My job search activity tracker</h2>
     <input type="text" id="companyInput" ng-model="vm.activity.company" placeholder="Company">
@@ -14,22 +14,11 @@
   
 </div>
 <div class= 'container'>
-  <body ng-controller="prep.controller">
-    <div ng-repeat="job in vm.activities" class="trackerRow">
-      <p class="compRow">{{job.company}}</p>
-      <p class="jobRow">{{job.job}}</p>
-      <p class="dateRow">{{job.date}}</p>
-      <p class="contactRow">{{job.contact}}</p>
-      <p class="nextStepsRow">{{job.next_steps}}</p>
-      <p class="notesRow">{{job.notes}}</p>
-     
-     
-     
-     
-      <!-- <td class="petRowUpdate"><button class="petRowUpdateButton tableButton">Go</button></td>
-      <td class="petRowDelete "><button class="petRowDeleteButton tableButton">Go</button></td>
-      <td class="petRowCheckInOut"><button class="petRowCheckInOutButton tableButton">In</button></td> -->
-      </div>
+  <body ng-controller="PrepController as vm">
+    <div  class="trackerRow">
+      <ul ng-repeat="job in vm.activityTracker.list">
+      <li class="compRow">{{job.company}} {{job.job}} {{job.date}} {{job.contact}}
+          {{job.next_steps}} {{job.notes}}
   </body>
 </div>
 
@@ -37,3 +26,4 @@
   
     <a href="#!/prep3">prep 3</a>
 </div>
+<!-- // {{vm.activityTracker.list}} -->

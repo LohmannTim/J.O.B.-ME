@@ -6,10 +6,17 @@ myApp.service('PrepService', ['$http', function ($http) {
     self.taskManager = {
         list: []
     };
+    self.companies = {
+        list: []
+    };
     self.activity = {}
     self.prep = {
         list: []
     }
+    self.activityTracker = {
+        list: []
+    };
+    
     self.getPrep = function () {
         $http.get('/prep').then(function (response) {
             self.prep.list = response.data;
@@ -19,9 +26,7 @@ myApp.service('PrepService', ['$http', function ($http) {
         })
     };
 
-    self.activityTracker = {
-        list: []
-    };
+    
 
     self.getActivityTracker = function () {
         $http.get('/prep/activitytracker').then(function (response) {
@@ -60,6 +65,58 @@ myApp.service('PrepService', ['$http', function ($http) {
         })
     }
 
-    
+    self.location = '';
+    self.companyLocation = function () {
+        console.log('service post hit with:', self.location);
+        $http({
+            method: 'GET',
+            url: '/plan/glassdoor',
+            data: self.location
+        }).then(function (response) {
+            console.log('sent location', response);
+            self.location();
+
+        });
+
+    }
+
+
+    self.getGlassdoor = function () {
+        console.log(location);
+        console.log('getting glassdoor');
+        $http({
+            method: 'GET',
+            url: '/plan/glassdoor',
+            params: {
+                location: ''
+            }
+        }).then(function (response) {
+            console.log('received companies', response.data.response.employers);
+            self.companies.list = response.data.response.employers;
+        });
+    };
+    self.getCompanies = function (location) {
+        console.log('service post hit with: ', self.companies);
+        $http({
+            method: 'POST',
+            url: '/prep/glassdoor',
+            data: {
+                location: location
+            }
+        }).then(function (response) {
+            console.log('companies on prep service data', response.data.response.employers);
+
+            self.companies.list = response.data.response.employers;
+            //         console.log('get response', self.activityTracker.list);
+
+
+            //     })
+            // };
+            //self.getCompanies();
+        });
+    };
+
+
+    //self.getGlassdoor();
 
 }])

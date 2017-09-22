@@ -1,16 +1,15 @@
 <h1>Prepare- Stage 3</h1>
-{{vm.companies.list[0]}}
+
 <h1>JOB LOCATINATOR!!</h1>
 <div>
         <input type="text" placeholder="location" ng-model= 'vm.location'><button ng-click="vm.getCompanies()" type="text" id="getCompanies">search</button>
 </div>
+
 <div class= 'container'>
-        <body ng-controller="prep.controller">
+        <body ng-controller="PrepController as vm">
           <div ng-repeat="companies in vm.companies.list">
-            <p class="compRow">{{companies.name}}</p>
-            <p class="websiteRow">{{companies.website}}</p>
-            <p class="industryRow">{{companies.industry}}</p>
-            <p class="prosRow">{{companies.pros}}</p>
+            <p class="compRow"><a ng-href='{{companies.website}}'>{{companies.name}}</a></p>
+            
             </div>
         </body>
       </div>

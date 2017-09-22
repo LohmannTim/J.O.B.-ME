@@ -47,50 +47,5 @@ myApp.service('PlanService', ['$http', function($http) {
             self.getPlan();
         });
     };
-    self.location= '';
-    self.companyLocation = function() {
-        console.log('service post hit with:', self.location);
-        $http({
-            method: 'GET',
-            url: '/plan/glassdoor',
-            data: self.location
-        }).then(function(response){
-            console.log('sent location', response);
-            self.location();
-            
-        });
-        
-    }
-    self.companies = {
-        list: []
-    };
-
-    self.getGlassdoor = function () {
-        console.log(location);
-        console.log('getting glassdoor');
-        $http({
-            method: 'GET',
-            url: '/plan/glassdoor',
-            params: {
-                location: ''
-            }
-        }).then(function (response) {
-            console.log('received companies', response.data.response.employers);
-            self.companies.list = response.data.response.employers;
-        });
-    };
-    self.getCompanies = function () {
-        console.log('service post hit with: ', self.companies);
-        $http({
-            method: 'POST',
-            url: '/plan/glassdoor',
-            data: self.companies
-        }).then(function (response) {
-            console.log('sent data', response);
-            self.getCompanies();
-        });
-    };
-
-
-    self.getGlassdoor();
+    
     }]);
