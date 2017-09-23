@@ -1,4 +1,8 @@
-<h1>Prepare- Stage 2</h1>
+<div ng-include="'views/partials/header.html'"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md 12">
+            <h1>Prepare- Stage 2</h1>
 
 <div id="myTracker" class="container">
     <h2>My job search activity tracker</h2>
@@ -16,14 +20,20 @@
 <div class= 'container'>
   <body ng-controller="PrepController as vm">
     <div  class="trackerRow">
-      <ul ng-repeat="job in vm.activityTracker.list">
-      <li class="compRow">{{job.company}} {{job.job}} {{job.date}} {{job.contact}}
-          {{job.next_steps}} {{job.notes}}
-  </body>
-</div>
-
-
-  
-    <a href="#!/prep3">prep 3</a>
+<p></p>
+<p></p>
+          <table>
+              <tr ng-repeat="job in vm.activityTracker.list | orderBy : 'company'">
+                <td>{{ job.company }}</td>
+                <td>{{ job.job }}</td>
+                <td>{{ job.date }}</td>
+                <td>{{ job.contact }}</td>
+                <td>{{ job.next_steps }}</td>
+                <td>{{ job.next_steps }}</td>
+              </tr>
+            </table>
+          </body>
+        </div>
+    <a class="btn btn-primary" href="#!/prep3">prep 3</a>
 </div>
 <!-- // {{vm.activityTracker.list}} -->

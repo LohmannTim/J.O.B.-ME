@@ -86,8 +86,14 @@ router.post('/glassdoor', function (req, res) {
     var userID = '196332';
     var request = require('request');
     var searchTerm = req.body.location;
+    var pageNumber = '2'; 
+    var pageSize = '50';
     var repo_options = {
-    url: 'http://api.glassdoor.com/api/api.htm?t.p=' + userID + '&t.k=' + userKEY + '&userip=0.0.0.0&useragent=&format=json&v=1&action=employers&city=' + searchTerm,
+    url: 'http://api.glassdoor.com/api/api.htm?t.p=' +
+     userID + '&t.k=' +
+     userKEY + '&userip=0.0.0.0&useragent=&format=json&v=1&action=employers&city=' +
+     searchTerm + 
+     '&pn=3',
     headers: {
         'User-Agent': 'request',
     }
@@ -97,6 +103,7 @@ router.post('/glassdoor', function (req, res) {
         if (response && response.statusCode == 200) {
             res.send(body);
         } else {
+            console.log('error retrieving data from glass door', error);
              res.sendStatus(500);
         }
     });
