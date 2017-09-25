@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md 12">
-            <h1>Prepare- Stage 2</h1>
+            <h1>Prepare 2- Job Tracker</h1>
 
 <div id="myTracker" class="container">
     <h2>My job search activity tracker</h2>
@@ -23,13 +23,16 @@
 <p></p>
 <p></p>
           <table>
+            <thead>
+            <tr class="prep2tr"><th>Company</th><th>Job</th><th>Date</th><th>Contact</th><th>Next Steps</th><th>Notes</th></tr>
+            </thead>
               <tr ng-repeat="job in vm.activityTracker.list | orderBy : 'company'">
-                <td>{{ job.company }}</td>
-                <td>{{ job.job }}</td>
-                <td>{{ job.date }}</td>
-                <td>{{ job.contact }}</td>
-                <td>{{ job.next_steps }}</td>
-                <td>{{ job.next_steps }}</td>
+                <td class='prep2td'>{{ job.company }}</td>
+                <td class='prep2td'>{{ job.job }}</td>
+                <td class='prep2td'>{{ job.date }}</td>
+                <td class='prep2td'>{{ job.contact }}</td>
+                <td class='prep2td'>{{ job.next_steps }}</td>
+                <td class='prep2td'>{{ job.notes }}</td>
               </tr>
             </table>
           </body>
