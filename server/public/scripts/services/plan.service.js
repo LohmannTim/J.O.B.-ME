@@ -47,5 +47,20 @@ myApp.service('PlanService', ['$http', function($http) {
             self.getPlan();
         });
     };
-    
+    self.putResume = function(user, string) {
+        console.log('resume put hit');
+        var data = {
+            user: user,
+            url: string
+        };
+        $http({
+            method: 'PUT',
+            url: '/plan/resume',
+            data: data
+        }).then(function(response){
+            console.log('resume sent', response);
+            
+        });
+        
+    }
     }]);

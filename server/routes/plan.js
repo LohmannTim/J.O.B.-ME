@@ -77,4 +77,30 @@ router.post('/qanda', function (req, res) {
         }
     });
 });
+router.put('/resume', function(req, res){
+	var messageId = req.params.id;  
+	console.log('resume put was hit!', req.body);
+	// Add an INSERT query
+	pool.connect(function(errorConnectingToDatabase, client, done){
+		if(errorConnectingToDatabase) {
+			// when connecting to database failed
+			console.log('Error connecting to database', errorConnectingToDatabase);
+			res.sendStatus(500);
+		} else {
+			// when connecting to database worked!
+			// query like this: UPDATE messages SET message='Have a really terrific day!' WHERE id=1;
+			client.query('UPDATE user_authentication SET resume=$1 WHERE id=$2;', 
+							[req.body.url, req.body.user], 
+							function(errorMakingQuery, result) {
+				done();
+				if(errorMakingQuery) {
+					console.log('Error making database query', errorMakingQuery);
+					res.sendStatus(500);
+				} else {
+					res.sendStatus(200);
+				}
+			});
+		}
+	});
+});
 module.exports = router;

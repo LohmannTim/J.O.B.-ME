@@ -1,4 +1,4 @@
-myApp.controller('PlanController', function (PlanService, UserService) {
+myApp.controller('PlanController', ['PlanService', 'UserService', function (PlanService, UserService) {
         console.log('Plan Controller loaded');
         var self = this;
         UserService.getuser();
@@ -8,7 +8,7 @@ myApp.controller('PlanController', function (PlanService, UserService) {
         self.userResponse = PlanService.plan; //pulls self.plan in to controller
         self.addAnswer = function () { //passing in the object created on plan1.html
                 PlanService.addAnswer();
-        }
+        };
         self.openPicker = function () {
                 console.log('Script loaded');
                 var fsClient = filestack.init('A82q3O0tkSouW7Mmg3Gouz');
@@ -21,8 +21,9 @@ myApp.controller('PlanController', function (PlanService, UserService) {
                                 // declare this function to handle response
                                 //handleFilestack(response);
                                 console.log(response);
+                                PlanService.putResume(self.userObject.user_id, response.filesUploaded[0].url);
                         });
                 }
                 openPicker();
-        }
-});
+        };
+}]);
