@@ -17,9 +17,11 @@ myApp.controller('PrepController', function (PrepService) {
                 PrepService.getCompanies(self.location);
                 self.companies = PrepService.companies;
                 console.log('companies on controlller, ', self.companies)
+                
+        }
         // self.PrepService.addActivity();
         // PlanService.addActivity();
         // self.PlanService.glassdoor();
-        }
+        
         
 });

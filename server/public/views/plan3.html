@@ -3,17 +3,9 @@
     <div class="row">
         <div class="col-md 12">
             <h1>Plan- Resume Builder</h1>
-<script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
-<script>
-    var client = filestack.init('A82q3O0tkSouW7Mmg3Gouz');
-    function showPicker() {
-        client.pick({
-        }).then(function(result) {
-            console.log(JSON.stringify(result.filesUploaded))
-        });
-    }
-</script>
-<input type="button" value="Upload" onclick="showPicker()" />
+
+            
+<button type="button" value="Upload" ng-click="vm.openPicker()">Upload</button>
 
 <p>Click on the buttons inside the tabbed menu:</p>
 
@@ -22,22 +14,6 @@
   <button class="tablinks" onclick="openResume(resume, 'sample1')">Sample 1</button>
   <button class="tablinks" onclick="openResume(resume, 'sample2')">Sample 2</button>
   <button class="tablinks" onclick="openResume(resume, 'myResume')">My Resume</button>
-</div>
-
-<div id="resumeFormat" class="tabcontent">
-  <h3>Format</h3>
-</div>
-
-<div id="Sample_1" class="tabcontent">
-  <h3>Sample 1</h3>
-</div>
-
-<div id="Sample_2" class="tabcontent">
-  <h3>Sample 2</h3>
-</div>
-
-<div id="myResume" class="tabcontent">
-  <h3>My Resume</h3>
 </div>
 
 <script>

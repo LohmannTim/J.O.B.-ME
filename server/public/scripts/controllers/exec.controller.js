@@ -1,4 +1,4 @@
-myApp.controller('ExecController', //give myApp.controller the name of 'ListingController'
+myApp.controller('ExecController', //give myApp.controller the name of 'ExecController'
 ['ExecService', //array listing dependencies and the last item of the array calls it all up
     function (ExecService) {
         console.log('Exec Controller loaded');
