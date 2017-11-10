@@ -2,7 +2,7 @@ J.O.B. ME
 Tim Lohmann
 <8/31/17> | Version 1.0.0.x
 Document Objectives
-<The purpose of this document is to provide detailed documentation about the application you will be building for your Prime Solo Project. It should include such details as:
+<The purpose of this document is to provide detailed documentation about the application I will be building for my Prime Solo Project.
 
 All Features described, how the app works
 Technology stack used (Frameworks, Libraries), including any 3rd party APIs/web services
@@ -14,7 +14,6 @@ The purpose of this document is to provide detailed documentation to <Client> ("
 
 This document takes precedence over any other documentation provided regarding scope of work.
 Application Overview
-(Provide a high-level description of what the application is/does. Consider this the summary or elevator pitch you would use to get someone interested in your project.)
 
 My application guides the user from the beginning of a job search to the first day in their new job.  I will use a schema approach for each step of the process from getting organized, building a resume, finding employers, interviewing, compensation negotiation and much more.  Where this app is unique is that it a step by step approach that the individual can use to track their progress, get updates/reminders on how the search is coming, and make anyone feel confident in their search by breaking it down into the smallest pieces
 Application Features
